@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">PracticalTest02</string>
+
+    <!-- Texte pentru secțiunea server -->
+    <string name="server">SERVER</string>
+    <string name="server_port">Server Port</string>
+    <string name="connect">Connect</string>
+
+    <!-- Texte pentru secțiunea client -->
+    <string name="client">CLIENT</string>
+    <string name="client_address">Client Address</string>
+    <string name="client_port">Client Port</string>
+    <string name="city">City</string>
+    <string name="get_weather_forecast">Get Weather</string>
+
+    <!-- Array pentru tipurile de informații meteorologice -->
+    <string-array name="information_types">
+        <item>all</item>
+        <item>temperature</item>
+        <item>wind_speed</item>
+        <item>condition</item>
+        <item>pressure</item>
+        <item>humidity</item>
+    </string-array>
+</resources>

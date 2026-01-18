@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="ro.pub.cs.systems.eim.practicaltest02.PracticalTest02MainActivity">
+
+    <!-- ==================== SECȚIUNEA SERVER ==================== -->
+
+    <!-- Titlu pentru secțiunea server -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="@string/server"/>
+
+    <!-- Layout orizontal pentru portul serverului și butonul de conectare -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <!-- ScrollView pentru câmpul de port server (permite scroll dacă e nevoie) -->
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <!-- Câmp text pentru introducerea portului serverului -->
+            <EditText
+                android:id="@+id/server_port_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/server_port"
+                android:inputType="number"/>
+
+        </ScrollView>
+
+        <!-- ScrollView pentru butonul de conectare server -->
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <!-- Buton pentru pornirea serverului -->
+            <Button
+                android:id="@+id/connect_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/connect"/>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!-- Spațiu gol între secțiuni -->
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+
+    <!-- ==================== SECȚIUNEA CLIENT ==================== -->
+
+    <!-- Titlu pentru secțiunea client -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="@string/client"/>
+
+    <!-- Layout orizontal pentru adresa și portul clientului -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <!-- ScrollView pentru adresa serverului -->
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <!-- Câmp text pentru adresa serverului (localhost/127.0.0.1) -->
+            <EditText
+                android:id="@+id/client_address_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/client_address"
+                android:text="127.0.0.1"/>
+
+        </ScrollView>
+
+        <!-- ScrollView pentru portul clientului -->
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <!-- Câmp text pentru portul la care se conectează clientul -->
+            <EditText
+                android:id="@+id/client_port_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/client_port"
+                android:inputType="number"/>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!-- GridLayout pentru câmpurile de intrare client -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_marginTop="10dp">
+
+        <!-- Câmp text pentru introducerea numelui orașului -->
+        <EditText
+            android:id="@+id/city_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/city"
+            android:layout_row="0"
+            android:layout_column="0"/>
+
+        <!-- Spinner (listă drop-down) pentru selectarea tipului de informație -->
+        <Spinner
+            android:id="@+id/information_type_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/information_types"
+            android:layout_row="1"
+            android:layout_column="0"/>
+
+        <!-- Buton pentru trimiterea cererii către server -->
+        <Button
+            android:id="@+id/get_weather_forecast_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/get_weather_forecast"
+            android:layout_row="0"
+            android:layout_rowSpan="2"
+            android:layout_column="1"/>
+
+    </GridLayout>
+
+    <!-- ScrollView pentru zona de răspuns (permite scroll dacă răspunsul e lung) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+        <!-- TextView pentru afișarea răspunsului de la server -->
+        <TextView
+            android:id="@+id/weather_forecast_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:padding="8dp"/>
+
+    </ScrollView>
+
+</LinearLayout>
